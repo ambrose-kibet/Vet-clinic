@@ -56,3 +56,34 @@ SELECT a.name
 FROM animals a
 JOIN owners o ON a.owner_id = o.id
 WHERE o.full_name = 'Melody Pond';
+
+SELECT animals.name, species.name AS type
+FROM animals
+JOIN species ON animals.species_id = species.id
+WHERE species.name = 'Pokemon';
+
+SELECT owners.full_name, animals.name as animal_name
+FROM owners
+LEFT JOIN animals ON owners.id = animals.owner_id
+ORDER BY owners.full_name;
+
+SELECT s.name AS species, COUNT(*) AS animal_count
+FROM animals a
+JOIN species s ON a.species_id = s.id
+GROUP BY s.name;
+
+SELECT animals.name
+FROM animals
+JOIN owners ON animals.owner_id = owners.id
+JOIN species ON animals.species_id = species.id
+WHERE owners.full_name = 'Jennifer Orwell' AND species.name = 'Digimon';
+
+SELECT * FROM animals
+JOIN owners ON animals.owner_id = owners.id
+WHERE owners.full_name = 'Dean Winchester' AND animals.escape_attempts < 1;
+
+SELECT owners.full_name, COUNT(animals.id) AS num_animals_owned
+FROM owners
+LEFT JOIN animals ON owners.id = animals.owner_id
+GROUP BY owners.id
+ORDER BY num_animals_owned DESC;
