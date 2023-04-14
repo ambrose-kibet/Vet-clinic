@@ -103,11 +103,11 @@ SELECT vets.name,specializations.species_id AS specialization_species_id FROM ve
 LEFT JOIN specializations ON vets.id = specializations.vet_id
 ORDER BY vets.name;
 
-SELECT animals.*
-FROM animals
-JOIN visits ON visits.animal_id = animals.id
-JOIN vets ON visits.vet_id = vets.id
-WHERE vets.name = 'Stephanie Mendez' AND visits.visit_date BETWEEN '2020-04-01' AND '2020-08-30'
+  SELECT DISTINCT animals.name
+  FROM visits
+  LEFT JOIN animals ON animals.id = visits.animal_id
+  LEFT JOIN vets ON vets.id = visits.vet_id
+  WHERE vets.name = 'Stephanie Mendez';
 
 SELECT animals.name, COUNT(*) AS num_visits
 FROM visits
@@ -140,10 +140,11 @@ JOIN vets vt ON v.vet_id = vt.id
 LEFT JOIN specializations vs ON vt.id = vs.vet_id AND a.species_id = vs.species_id
 WHERE vs.species_id IS NULL;
 
-SELECT animals.species_id, COUNT(*) AS num_visits
-FROM visits
-JOIN animals ON visits.animal_id = animals.id
-JOIN vets ON visits.vet_id = vets.id
-WHERE vets.name = 'Maisy Smith'
-GROUP BY animals.species_id
-ORDER BY num_visits DESC;
+  SELECT species.name, count(*)
+  FROM visits
+  LEFT JOIN animals ON animals.id = visits.animal_id
+  LEFT JOIN species ON animals.species_id = species.id
+  LEFT JOIN vets ON vets.id = visits.vet_id
+  WHERE vet.name = 'Maisy Smith'
+  GROUP BY species.name
+
