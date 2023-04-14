@@ -147,4 +147,7 @@ LEFT JOIN species ON animals.species_id = species.id
 LEFT JOIN vets ON vets.id = visits.vet_id
 WHERE vets.name = 'Maisy Smith'
 GROUP BY species.name
+ORDER BY visits_count DESC
+LIMIT 1
+
 
