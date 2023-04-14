@@ -140,11 +140,11 @@ JOIN vets vt ON v.vet_id = vt.id
 LEFT JOIN specializations vs ON vt.id = vs.vet_id AND a.species_id = vs.species_id
 WHERE vs.species_id IS NULL;
 
-  SELECT species.name, count(*)
-  FROM visits
-  LEFT JOIN animals ON animals.id = visits.animal_id
-  LEFT JOIN species ON animals.species_id = species.id
-  LEFT JOIN vets ON vets.id = visits.vet_id
-  WHERE vet.name = 'Maisy Smith'
-  GROUP BY species.name
+SELECT species.name, COUNT(*) AS visits_count
+FROM visits
+LEFT JOIN animals ON animals.id = visits.animal_id
+LEFT JOIN species ON animals.species_id = species.id
+LEFT JOIN vets ON vets.id = visits.vet_id
+WHERE vets.name = 'Maisy Smith'
+GROUP BY species.name
 
