@@ -1,13 +1,5 @@
 # Vet clinic database
 
-## Getting Started
-
-This repository includes files with plain SQL that can be used to recreate a database:
-
-- Use [schema.sql](./schema.sql) to create all tables.
-- Use [data.sql](./data.sql) to populate tables with sample data.
-- Check [queries.sql](./queries.sql) for examples of queries that can be run on a newly created database. **Important note: this file might include queries that make changes in the database (e.g., remove records). Use them responsibly!**
-
 <a name="readme-top"></a>
 
 # 📗 Table of Contents
@@ -60,6 +52,14 @@ This repository includes files with plain SQL that can be used to recreate a dat
 
 <!-- GETTING STARTED -->
 
+## Getting Started
+
+This repository includes files with plain SQL that can be used to recreate a database:
+
+- Use [schema.sql](./schema.sql) to create all tables.
+- Use [data.sql](./data.sql) to populate tables with sample data.
+- Check [queries.sql](./queries.sql) for examples of queries that can be run on a newly created database. **Important note: this file might include queries that make changes in the database (e.g., remove records). Use them responsibly!**
+
 ## 💻 Getting Started <a name="getting-started"></a>
 
 To get a local copy up and running, follow these steps.
@@ -72,8 +72,6 @@ Clone this repository to your desired folder:
   cd my-folder
   git clone git@github.com:myaccount/Vet-clinic.git
 ```
-
--
 
 ### Usage
 
