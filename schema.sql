@@ -50,3 +50,5 @@ CREATE TABLE visits (
   vet_id INTEGER REFERENCES vets(id),
   visit_date DATE
 );
+
+ CREATE INDEX owners_idx ON owners (id);
