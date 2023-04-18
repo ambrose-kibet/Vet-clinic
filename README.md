@@ -26,6 +26,7 @@
 # 📖 Vet clinic <a name="about-project"></a>
 
 **Vet clinic** is a relational database project designed to manage patient records, and treatments at a veterinary clinic.
+- [Schema diagram](https://drawsql.app/teams/ambrose-kibet/diagrams/vet-clinic/embed)
 
 ## 🛠 Built With <a name="built-with"></a>
 
